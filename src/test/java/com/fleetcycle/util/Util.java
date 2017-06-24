@@ -349,4 +349,21 @@ public class Util extends Report implements IUtil {
   public String getWebElementTextByIndex(List<WebElement> webElement, int index) {
     return webElement.get(index).getText();
   }
+  
+  public String getWebElementText(By criteria) {
+    return getElement(criteria).getText();
+  }
+  
+  /**
+   * Verifies provided element is not null.
+   * @param criteria By
+   * @return true if element not null
+   */
+  public boolean isElementNotNull(By criteria) {
+    boolean result = false;
+    if (getElement(criteria) != null) {
+      result = true;
+    }
+    return result; 
+  }
 }

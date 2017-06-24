@@ -59,4 +59,8 @@ public interface IUtil {
   public void verifyResult(boolean condition, String pass, String fail);
 
   public String getWebElementTextByIndex(List<WebElement> webElement, int index);
+  
+  public String getWebElementText(By criteria);
+  
+  public boolean isElementNotNull(By criteria);
 }
