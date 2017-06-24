@@ -1,4 +1,4 @@
-package com.fleetcycle.Util;
+package com.fleetcycle.util;
 
 /*
 import com.aventstack.extentreports.ExtentReports;
@@ -38,7 +38,8 @@ public class NewReport extends Email {
     
     public void fail(String failMessage){
         try {
-            logger.log(Status.FAIL, failMessage + logger.addScreenCaptureFromPath(new Util().screenShot()));
+            logger.log(Status.FAIL, 
+            failMessage + logger.addScreenCaptureFromPath(new Util().screenShot()));
         } catch (IOException e) {
             e.printStackTrace();
         }
