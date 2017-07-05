@@ -16,6 +16,11 @@ public class LoginFlow {
     loginFlow.setUpSession();
   }
   
+  @AfterClass
+  public void closeSession() {
+    loginFlow.closeSession();
+  }
+  
   @Test(priority = 1)
   public void verifyLoginWithBlankUnameAndPwd() {
     loginFlow.verifyLoginWithBlankUnameAndPwd();
@@ -59,11 +64,6 @@ public class LoginFlow {
   @Test(priority = 9)
   public void verifyLogoutWhenNavigateBack() {
     loginFlow.verifyLogoutWhenNavigateBack();
-  }
-  
-  @AfterClass
-  public void closeSession() {
-    loginFlow.closeSession();
   }
   
 }

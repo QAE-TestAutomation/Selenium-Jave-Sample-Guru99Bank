@@ -2,6 +2,7 @@ package com.fleetcycle.interfaceclass;
 
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,8 @@ public interface IUtil {
   public List<WebElement> getElements(By element);
 
   public void enterTextIntoTextBox(WebElement webElement, String textToEnter);
+  
+  public void enterTextIntoTextBoxWithoutClear(WebElement webElement, String textToEnter);
 
   public void clickOnElement(WebElement webElement);
 
@@ -33,6 +36,8 @@ public interface IUtil {
   public void assertNotEquals(String expected, String actual);
 
   public void acceptAlert();
+  
+  public Alert getAlert();
 
   public void dimissAlert();
 

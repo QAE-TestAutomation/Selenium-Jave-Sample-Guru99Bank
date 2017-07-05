@@ -22,6 +22,11 @@ public class PageNavigationFlow {
   public void setUpSession() {
     pageNavigation.setUpSession();
   }
+
+  @AfterClass
+  public void closeSession() {
+    pageNavigation.closeSession();
+  }
   
   @Test(priority = 1)
   public void verifyLogin() {
@@ -41,10 +46,5 @@ public class PageNavigationFlow {
   @Test(priority = 4,dependsOnMethods = { "verifyLogin" })
   public void navigateToLinksInMangerHomePage() {
     pageNavigation.navigateToLinksInMangerHomePage();
-  }
-  
-  @AfterClass
-  public void closeSession() {
-    pageNavigation.closeSession();
   }
 }

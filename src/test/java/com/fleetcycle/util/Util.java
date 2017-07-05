@@ -144,6 +144,10 @@ public class Util extends Report implements IUtil {
     clearTextBox(webElement);
     webElement.sendKeys(textToEnter);
   }
+  
+  public void enterTextIntoTextBoxWithoutClear(WebElement webElement, String textToEnter) {
+    webElement.sendKeys(textToEnter);
+  }
 
   @Override
   public void clickOnElement(WebElement webElement) {
@@ -209,7 +213,7 @@ public class Util extends Report implements IUtil {
    * Close the Webdriver session.
    */
   public void closeSession() {
-    webDriver.quit();
+    //webDriver.quit();
     garbageClean();
   }
   
@@ -223,6 +227,11 @@ public class Util extends Report implements IUtil {
     waitForSpecificTime(1000);
     Alert alert = webDriver.switchTo().alert();
     alert.accept();
+  }
+  
+  public Alert getAlert() {
+    Alert alert = webDriver.switchTo().alert();
+    return alert;
   }
 
   @Override

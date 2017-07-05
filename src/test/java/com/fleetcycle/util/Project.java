@@ -33,6 +33,97 @@ public class Project {
   private String iuserName = readProfFile().getProperty("iUserName");
   private String ipassword = readProfFile().getProperty("iPassword");
 
+  private String customerName  = readProfFile().getProperty("customerName");
+  private String gender = readProfFile().getProperty("gender");
+  private String dateOfBirth = readProfFile().getProperty("dateOfBirth");
+  private String address = readProfFile().getProperty("address");
+  private String city = readProfFile().getProperty("city");
+  private String state = readProfFile().getProperty("state");
+  private String pin = readProfFile().getProperty("pin");
+  private String mobileNumber = readProfFile().getProperty("mobileNumber");
+  private String email = readProfFile().getProperty("email");
+  private String ncPassword = readProfFile().getProperty("ncPassword");
+  
+  /**
+   * customerName.
+   * @return the customerName
+   */
+  public String getCustomerName() {
+    return customerName;
+  }
+
+  /**
+   * gender.
+   * @return the gender
+   */
+  public String getGender() {
+    return gender;
+  }
+
+  /**
+   * dateOfBirth.
+   * @return the dateOfBirth
+   */
+  public String getDateOfBirth() {
+    return dateOfBirth;
+  }
+
+  /**
+   * address.
+   * @return the address
+   */
+  public String getAddress() {
+    return address;
+  }
+
+  /**
+   * city.
+   * @return the city
+   */
+  public String getCity() {
+    return city;
+  }
+
+  /**
+   * state.
+   * @return the state
+   */
+  public String getState() {
+    return state;
+  }
+
+  /**
+   * pin.
+   * @return the pin
+   */
+  public String getPin() {
+    return pin;
+  }
+
+  /**
+   * mobileNumber.
+   * @return the mobileNumber
+   */
+  public String getMobileNumber() {
+    return mobileNumber;
+  }
+
+  /**
+   * email.
+   * @return the email
+   */
+  public String getEmail() {
+    return email;
+  }
+
+  /**
+   * ncPassword.
+   * @return the ncPassword
+   */
+  public String getNcPassword() {
+    return ncPassword;
+  }
+  
   /**
    * browser.
    * @return the browser

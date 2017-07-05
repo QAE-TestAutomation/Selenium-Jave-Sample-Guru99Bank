@@ -19,6 +19,11 @@ public class NewCustomerFlow {
   public void setUpSession() {
     newCustomer.setUpSession();
   }
+
+  @AfterClass
+  public void closeSession() {
+    newCustomer.closeSession();
+  }
   
   @Test(priority = 1)
   public void verifyLogin() {
@@ -53,10 +58,5 @@ public class NewCustomerFlow {
   @Test(priority = 7)
   public void verifyAddingDuplicateCustomer() {
     newCustomer.verifyAddingDuplicateCustomer();
-  }
-  
-  @AfterClass
-  public void closeSession() {
-    newCustomer.closeSession();
   }
 }
