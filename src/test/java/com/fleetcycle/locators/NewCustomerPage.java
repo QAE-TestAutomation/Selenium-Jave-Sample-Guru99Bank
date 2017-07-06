@@ -28,7 +28,7 @@ public class NewCustomerPage {
   private By dateOfBirth = By.name("dob");
   private By dateOfBirthValidationMsg = By.id("message24");
   private By address = By.name("addr");
-  private By addressValidationMsg = By.name("message3");
+  private By addressValidationMsg = By.id("message3");
   private By city = By.name("city");
   private By cityValidationMsg = By.id("message4");
   private By state = By.name("state");

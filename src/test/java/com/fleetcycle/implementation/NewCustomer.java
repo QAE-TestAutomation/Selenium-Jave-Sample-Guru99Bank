@@ -137,7 +137,27 @@ public class NewCustomer extends Util implements INewCustomer {
       clickOnElement(getElement(newCustomerPage.getReset()));
     }
   }
+  
+  private void enterDataIntoAddNewCustomerFields(String custName, String gender, String dob,
+      String address, String city, String state, String pin, String mblNo, 
+      String email, String pwd) {
+    enterTextIntoTextBox(getElement(newCustomerPage.getCustomerName()), custName);
+    if (gender.toLowerCase().equals("female")) {
+      getElements(newCustomerPage.getGender()).get(1).click();
+    }
+    enterTextIntoTextBoxWithoutClear(getElement(newCustomerPage.getDateOfBirth()), dob);
+    enterTextIntoTextBox(getElement(newCustomerPage.getAddress()), address);
+    enterTextIntoTextBox(getElement(newCustomerPage.getCity()), city);
+    enterTextIntoTextBox(getElement(newCustomerPage.getState()), state);
+    enterTextIntoTextBox(getElement(newCustomerPage.getPin()), pin);
+    enterTextIntoTextBox(getElement(newCustomerPage.getMobileNumber()), mblNo);
+    enterTextIntoTextBox(getElement(newCustomerPage.getEmail()), email);
+    enterTextIntoTextBox(getElement(newCustomerPage.getPassword()), pwd);
+    // Enter blank into text box's
+    enterTextIntoTextBox(getElement(newCustomerPage.getAddress()), address);
+  }
 
+  
   @Override
   public void verifyAddingDuplicateCustomer() {
     startTest("Verify adding duplicate customer in Add New Customer Page.");
@@ -146,9 +166,11 @@ public class NewCustomer extends Util implements INewCustomer {
         project.getDateOfBirth(), project.getAddress(), project.getCity(), project.getState(),
         project.getPin(), project.getMobileNumber(), project.getEmail(), project.getNcPassword(),
         true);
+    waitForSpecificTime(5000);
     //accept alert with whose message consist duplicate email id
-    Alert alert = getAlert();
-    if (alert.getText().contains("")) {
+    Alert alert = webDriver.switchTo().alert();
+    System.out.println(alert.getText());
+    if (alert.getText().trim().contains("Email Address Already Exist !!")) {
       alert.accept();
     }
     verifyResetFields();
@@ -162,31 +184,32 @@ public class NewCustomer extends Util implements INewCustomer {
     endTest(logger);
   }
   
-  private void manadatoryTextForField(By criteria,String fieldName,String message) {
-    enterTextIntoTextBoxWithoutClear(getElement(criteria), "");
-    verifyResult(getTextBoxValue(getElement(criteria)).equals(message),
+  private void manadatoryTextForField(By validation,String fieldName,String message) {
+    verifyResult(getWebElementText(validation).equals(message),
         "Mandatory message is displaying for " + fieldName, 
         "Mandatory message is not displaying for " + fieldName);
   }
   
   private void verifyMandatoryTextForFields() {
+    waitForSpecificTime(2000);
+    enterDataIntoAddNewCustomerFields("", "", "", "", "", "", "", "", "", "");
     manadatoryTextForField(newCustomerPage.getCustomerNameValidationMsg(), "CustomerName",
         "Customer name must not be blank");
     manadatoryTextForField(newCustomerPage.getDateOfBirthValidationMsg(), "DateOfBirth",
         "Date Field must not be blank");
-    manadatoryTextForField(newCustomerPage.getAddressValidationMsg(), "Address",
-        "Address Field must not be blank");
+    manadatoryTextForField(newCustomerPage.getAddressValidationMsg(),
+        "Address", "Address Field must not be blank");
     manadatoryTextForField(newCustomerPage.getCityValidationMsg(),
         "City", "City Field must not be blank");
-    manadatoryTextForField(newCustomerPage.getStateValidationMsg(), 
+    manadatoryTextForField(newCustomerPage.getStateValidationMsg(),
         "State", "State must not be blank");
-    manadatoryTextForField(newCustomerPage.getPinValidationMsg(), 
-        "Pin", "PIN Code must not be blank");
-    manadatoryTextForField(newCustomerPage.getMobileNumberValidationMsg(), 
-        "MobileNumber","Mobile no must not be blank");
+    manadatoryTextForField(newCustomerPage.getPinValidationMsg(), "Pin",
+        "PIN Code must not be blank");
+    manadatoryTextForField(newCustomerPage.getMobileNumberValidationMsg(), "MobileNumber",
+        "Mobile no must not be blank");
     manadatoryTextForField(newCustomerPage.getEmailValidationMsg(),
         "Email", "Email-ID must not be blank");
-    manadatoryTextForField(newCustomerPage.getPasswordValidationMsg(), 
-        "Password", "Password must not be blank");
+    manadatoryTextForField(newCustomerPage.getPasswordValidationMsg(), "Password",
+        "Password must not be blank");
   }
 }
