@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.fleetcycle.essentials.TestData;
+
 public interface IUtil {
 
   public WebDriver selectBrowser(String browserName);
@@ -45,7 +47,7 @@ public interface IUtil {
 
   public void closeSuite();
   
-  public void setUpSession();
+  public TestData setUpSession();
   
   public void closeSession();
   

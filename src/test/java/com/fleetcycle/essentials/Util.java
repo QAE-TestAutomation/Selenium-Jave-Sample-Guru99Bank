@@ -1,4 +1,4 @@
-package com.fleetcycle.util;
+package com.fleetcycle.essentials;
 
 import com.fleetcycle.interfaceclass.IUtil;
 
@@ -13,6 +13,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -36,6 +39,7 @@ import org.testng.annotations.BeforeSuite;
 public class Util extends Report implements IUtil {
 
   public static WebDriver webDriver;
+  public TestData testData;
 
   public static String CURRENTDIR = System.getProperty("user.dir") + "\\test-output";
   public static String filename = System.getProperty("user.dir")
@@ -56,6 +60,8 @@ public class Util extends Report implements IUtil {
     String driversPath = ".\\src\\resource";
     // Chrome 54
     System.setProperty("webdriver.chrome.driver", driversPath + "\\chromedriver.exe");
+    //System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\drivers\\chrome 59\\chromedriver.exe");
+    
     // IE 11
     System.setProperty("webdriver.ie.driver", driversPath + "\\IEDriverServer.exe");
     // Search - Setting > System > About - OS Build 10586.962
@@ -76,26 +82,26 @@ public class Util extends Report implements IUtil {
   @Override
   public WebDriver selectBrowser(String browserName) {
     switch (browserName.toLowerCase()) {
-      case "chrome":
-        webDriver = new ChromeDriver();
-        break;
-      case "ie":
-        webDriver = new InternetExplorerDriver();
-        break;
-      case "edge":
-        webDriver = new EdgeDriver();
-        break;
-      case "opera":
-        webDriver = new OperaDriver();
-        break;
-      case "safari":
-        webDriver = new SafariDriver();
-        break;
-      case "firefox":
-        webDriver = new FirefoxDriver();
-        break;
-      default:
-        break;
+    case "chrome":
+      webDriver = new ChromeDriver();
+      break;
+    case "ie":
+      webDriver = new InternetExplorerDriver();
+      break;
+    case "edge":
+      webDriver = new EdgeDriver();
+      break;
+    case "opera":
+      webDriver = new OperaDriver();
+      break;
+    case "safari":
+      webDriver = new SafariDriver();
+      break;
+    case "firefox":
+      webDriver = new FirefoxDriver();
+      break;
+    default:
+      break;
     }
     // Maximize the window
     webDriver.manage().window().maximize();
@@ -144,7 +150,7 @@ public class Util extends Report implements IUtil {
     clearTextBox(webElement);
     webElement.sendKeys(textToEnter);
   }
-  
+
   public void enterTextIntoTextBoxWithoutClear(WebElement webElement, String textToEnter) {
     webElement.sendKeys(textToEnter);
   }
@@ -199,16 +205,17 @@ public class Util extends Report implements IUtil {
   public void closeSuite() {
     closeTest();
   }
-  
+
   /**
    * Set up session of new project.
    */
-  public void setUpSession() {
-    Project project = new Project();
-    selectBrowser(project.getBrowser());
-    navigateTo(project.getUrl());    
+  public TestData setUpSession() {
+    testData = mapTestData();
+    selectBrowser(testData.getBrowser());
+    navigateTo(testData.getUrl());
+    return testData;
   }
-  
+
   /**
    * Close the Webdriver session.
    */
@@ -216,7 +223,7 @@ public class Util extends Report implements IUtil {
     //webDriver.quit();
     garbageClean();
   }
-  
+
   @Override
   public String getPageTitle() {
     return webDriver.getTitle().trim();
@@ -228,7 +235,7 @@ public class Util extends Report implements IUtil {
     Alert alert = webDriver.switchTo().alert();
     alert.accept();
   }
-  
+
   public Alert getAlert() {
     Alert alert = webDriver.switchTo().alert();
     return alert;
@@ -329,7 +336,7 @@ public class Util extends Report implements IUtil {
   public String screenShot() {
     // take screenshot and save it in a file
     String img = SCREENSHOTFOLDER + "\\FailedStep_screenshot_" + System.currentTimeMillis()
-        + ".jpg";
+    + ".jpg";
     try {
       Robot robot = new Robot();
       BufferedImage screenShot = robot
@@ -340,7 +347,7 @@ public class Util extends Report implements IUtil {
     }
     return img;
   }
-  
+
   /**
    * verifies result to include pass/fail status in extent report.
    * @param condition true/false
@@ -358,11 +365,11 @@ public class Util extends Report implements IUtil {
   public String getWebElementTextByIndex(List<WebElement> webElement, int index) {
     return webElement.get(index).getText();
   }
-  
+
   public String getWebElementText(By criteria) {
     return getElement(criteria).getText();
   }
-  
+
   /**
    * Verifies provided element is not null.
    * @param criteria By
@@ -374,5 +381,19 @@ public class Util extends Report implements IUtil {
       result = true;
     }
     return result; 
+  }
+
+  public TestData mapTestData() {
+    System.out.println("");
+    try {
+      File file = new File(".//src//resource//testData.xml");
+      JAXBContext jaxbContext = JAXBContext.newInstance(TestData.class);
+      Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+      testData = (TestData) jaxbUnmarshaller.unmarshal(file);
+      System.out.println(testData.toString());
+    } catch (JAXBException e) {
+      e.printStackTrace();
+    }
+    return testData;
   }
 }

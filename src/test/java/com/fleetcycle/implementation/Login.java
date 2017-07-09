@@ -1,16 +1,14 @@
 package com.fleetcycle.implementation;
 
+import com.fleetcycle.essentials.Util;
 import com.fleetcycle.interfaceclass.ILogin;
 import com.fleetcycle.locators.LoginPage;
 import com.fleetcycle.locators.ManagerHomePage;
-import com.fleetcycle.util.Project;
-import com.fleetcycle.util.Util;
 
 public class Login extends Util implements ILogin {
 
   private LoginPage loginPage = new LoginPage();
   private ManagerHomePage managerHomePage = ManagerHomePage.getInstance();
-  private Project project = Project.getInstance();
 
   public Login() {
   }
@@ -21,7 +19,7 @@ public class Login extends Util implements ILogin {
   @Override
   public void verifyLogin() {
     startTest("Verify login with valid username and valid password");
-    login(project.getUserName(), project.getPassword(), true);
+    login(testData.getUserName(), testData.getPassword(), true);
     verifyResult(getPageTitle().equals("Guru99 Bank Manager HomePage"),
         "Login to page using valid username and password.",
         "Could not login to page using valid username and password.");
@@ -35,7 +33,7 @@ public class Login extends Util implements ILogin {
   public void verifyLoggedManagerId() {
     startTest("Verify manager is is displaying in manager home page.");
     verifyResult(
-        getElement(managerHomePage.getLoggedManagerId()).getText().contains(project.getUserName()),
+        getElement(managerHomePage.getLoggedManagerId()).getText().contains(testData.getUserName()),
         "Logged manager id is displaying in homepage",
         "Logged manager id is not displaying in homepage");
     endTest(logger);
@@ -57,7 +55,7 @@ public class Login extends Util implements ILogin {
   @Override
   public void verifyLoginWithInvalidPassword() {
     startTest("Verify login with valid username and invalid password");
-    login(project.getUserName(), project.getiPassword(), true);
+    login(testData.getUserName(), testData.getiPassword(), true);
     acceptAlert();
     verifyResult(getPageTitle().equals("Guru99 Bank Home Page"),
         "Could not login to page using valid username and invalid password.",
@@ -87,7 +85,7 @@ public class Login extends Util implements ILogin {
   @Override
   public void verifyLoginWithInvalidUserName() {
     startTest("Verify login with Invalid user name and valid password");
-    login(project.getiUserName(), project.getPassword(), true);
+    login(testData.getiUserName(), testData.getPassword(), true);
     acceptAlert();
     verifyResult(getPageTitle().equals("Guru99 Bank Home Page"),
         "Could not login to page using invalid username and valid password.",
@@ -102,7 +100,7 @@ public class Login extends Util implements ILogin {
   @Override
   public void verifyReset() {
     startTest("Verify reset user name and password");
-    login(project.getUserName(), project.getPassword(), false);
+    login(testData.getUserName(), testData.getPassword(), false);
     verifyResult(getTextBoxValue(getElement(loginPage.getUserName())).equals(""),
         "Able to Reset username.", "Could not Reset username.");
     verifyResult(getTextBoxValue(getElement(loginPage.getPassword())).equals(""),
@@ -156,7 +154,7 @@ public class Login extends Util implements ILogin {
     waitForSpecificTime(2000);
     String currentUrl = getCurrentUrl();
     navigateTo(currentUrl);
-    login(project.getUserName(), project.getPassword(), true);
+    login(testData.getUserName(), testData.getPassword(), true);
     navigateToBack();
     waitForSpecificTime(2000);
     navigateForward();

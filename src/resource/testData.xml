@@ -1,0 +1,21 @@
+<TestData>
+    <!-- Project Credentials -->
+    <browser>chrome</browser>
+	<url>http://demo.guru99.com/v4/index.php</url>
+	<userName>mngr81688</userName>
+	<password>unyqYve</password>
+	<iUserName>iShiva</iUserName>
+	<iPassword>iPassword</iPassword>
+	
+	<!-- # Customer -->		  
+	<customerName>Shiva</customerName>  
+	<gender>male</gender>
+	<dateOfBirth>09252013</dateOfBirth>
+	<address>madhapur</address>
+	<city>Hyderabad</city>
+	<state>telangana</state>
+	<pin>500018</pin>
+	<mobileNumber>7386734679</mobileNumber>
+	<email>adiralashiva8s@gmail.com</email>
+	<ncPassword>123456!</ncPassword> 
+</TestData>

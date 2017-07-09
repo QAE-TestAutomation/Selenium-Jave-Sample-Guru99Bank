@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<test name="NewCustomer_Test">
 		<classes>
-			<class name="com.fleetcycle.util.Util" />
+			<class name="com.fleetcycle.essentials.Util" />
 			<class name="com.fleetcycle.flows.NewCustomerFlow" />
 		</classes>
 	</test> <!-- Test -->

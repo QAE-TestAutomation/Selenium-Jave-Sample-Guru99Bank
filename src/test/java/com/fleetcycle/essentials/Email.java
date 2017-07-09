@@ -1,4 +1,4 @@
-package com.fleetcycle.util;
+package com.fleetcycle.essentials;
 
 import java.util.Properties;
 import javax.activation.*;
