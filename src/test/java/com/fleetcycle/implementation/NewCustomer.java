@@ -80,7 +80,8 @@ public class NewCustomer extends Util implements INewCustomer {
     clickOnAddNewCustomerLink();
     enterDataIntoAddNewCustomerFields(testData.getCustomerName(), testData.getGender(),
         testData.getDateOfBirth(), testData.getAddress(), testData.getCity(), testData.getState(),
-        testData.getPin(), testData.getMobileNumber(), testData.getEmail(), testData.getNcPassword(),
+        testData.getPin(), testData.getMobileNumber(), testData.getEmail(),
+        testData.getNcPassword(),
         false);
     verifyResetFields();
     endTest(logger);
@@ -109,7 +110,8 @@ public class NewCustomer extends Util implements INewCustomer {
     clickOnElement(getElement(newCustomerPage.getReset()));
     enterDataIntoAddNewCustomerFields(testData.getCustomerName(), testData.getGender(),
         testData.getDateOfBirth(), testData.getAddress(), testData.getCity(), testData.getState(),
-        testData.getPin(), testData.getMobileNumber(), testData.getEmail(), testData.getNcPassword(),
+        testData.getPin(), testData.getMobileNumber(), testData.getEmail(),
+        testData.getNcPassword(),
         true);
     endTest(logger);
   }
@@ -162,7 +164,8 @@ public class NewCustomer extends Util implements INewCustomer {
     clickOnAddNewCustomerLink();
     enterDataIntoAddNewCustomerFields(testData.getCustomerName(), testData.getGender(),
         testData.getDateOfBirth(), testData.getAddress(), testData.getCity(), testData.getState(),
-        testData.getPin(), testData.getMobileNumber(), testData.getEmail(), testData.getNcPassword(),
+        testData.getPin(), testData.getMobileNumber(), testData.getEmail(),
+        testData.getNcPassword(),
         true);
     waitForSpecificTime(5000);
     //accept alert with whose message consist duplicate email id
