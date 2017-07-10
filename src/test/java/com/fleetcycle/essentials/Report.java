@@ -1,4 +1,4 @@
-package com.fleetcycle.util;
+package com.fleetcycle.essentials;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;

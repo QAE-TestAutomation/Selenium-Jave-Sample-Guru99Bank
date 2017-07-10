@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<test name="PageNavigation">
 		<classes>
-		<class name="com.fleetcycle.util.Util" />
+		<class name="com.fleetcycle.essentials.Util" />
 		<class name="com.fleetcycle.flows.PageNavigationFlow" />
 		</classes>
 	</test> <!-- Test -->

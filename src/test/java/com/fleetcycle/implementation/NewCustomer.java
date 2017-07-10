@@ -1,10 +1,9 @@
 package com.fleetcycle.implementation;
 
+import com.fleetcycle.essentials.Util;
 import com.fleetcycle.interfaceclass.INewCustomer;
 import com.fleetcycle.locators.ManagerHomePage;
 import com.fleetcycle.locators.NewCustomerPage;
-import com.fleetcycle.util.Project;
-import com.fleetcycle.util.Util;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -13,7 +12,6 @@ public class NewCustomer extends Util implements INewCustomer {
 
   private static NewCustomer newCustomer;
   private NewCustomerPage newCustomerPage = NewCustomerPage.getInstance();
-  private Project project = Project.getInstance();
   
   public NewCustomer() {
   }
@@ -80,9 +78,9 @@ public class NewCustomer extends Util implements INewCustomer {
   public void verifyResetWhileAddingNewCustomer() {
     startTest("Verify reset in Add New Customer Page.");
     clickOnAddNewCustomerLink();
-    enterDataIntoAddNewCustomerFields(project.getCustomerName(), project.getGender(),
-        project.getDateOfBirth(), project.getAddress(), project.getCity(), project.getState(),
-        project.getPin(), project.getMobileNumber(), project.getEmail(), project.getNcPassword(),
+    enterDataIntoAddNewCustomerFields(testData.getCustomerName(), testData.getGender(),
+        testData.getDateOfBirth(), testData.getAddress(), testData.getCity(), testData.getState(),
+        testData.getPin(), testData.getMobileNumber(), testData.getEmail(), testData.getNcPassword(),
         false);
     verifyResetFields();
     endTest(logger);
@@ -109,9 +107,9 @@ public class NewCustomer extends Util implements INewCustomer {
   public void verifyAddingNewCustomer() {
     startTest("Verify adding new customer in Add New Customer Page.");
     clickOnElement(getElement(newCustomerPage.getReset()));
-    enterDataIntoAddNewCustomerFields(project.getCustomerName(), project.getGender(),
-        project.getDateOfBirth(), project.getAddress(), project.getCity(), project.getState(),
-        project.getPin(), project.getMobileNumber(), project.getEmail(), project.getNcPassword(),
+    enterDataIntoAddNewCustomerFields(testData.getCustomerName(), testData.getGender(),
+        testData.getDateOfBirth(), testData.getAddress(), testData.getCity(), testData.getState(),
+        testData.getPin(), testData.getMobileNumber(), testData.getEmail(), testData.getNcPassword(),
         true);
     endTest(logger);
   }
@@ -162,9 +160,9 @@ public class NewCustomer extends Util implements INewCustomer {
   public void verifyAddingDuplicateCustomer() {
     startTest("Verify adding duplicate customer in Add New Customer Page.");
     clickOnAddNewCustomerLink();
-    enterDataIntoAddNewCustomerFields(project.getCustomerName(), project.getGender(),
-        project.getDateOfBirth(), project.getAddress(), project.getCity(), project.getState(),
-        project.getPin(), project.getMobileNumber(), project.getEmail(), project.getNcPassword(),
+    enterDataIntoAddNewCustomerFields(testData.getCustomerName(), testData.getGender(),
+        testData.getDateOfBirth(), testData.getAddress(), testData.getCity(), testData.getState(),
+        testData.getPin(), testData.getMobileNumber(), testData.getEmail(), testData.getNcPassword(),
         true);
     waitForSpecificTime(5000);
     //accept alert with whose message consist duplicate email id
