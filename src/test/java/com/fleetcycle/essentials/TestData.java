@@ -23,7 +23,99 @@ public class TestData {
   String mobileNumber;
   String email;
   String ncPassword; 
+  
+  // # Global Test data
+  String specialCharacter;
+  String twentyChar;
+  String fiftyChar;
+  String twentyFiveChar;
+  String sixChar;
+  String fifteenChar;
+  String fifteenCharMobile;
+  String thirtyChar;
+  String thirtyCharEmail;
+  
+  @XmlElement
+  public String getThirtyCharEmail() {
+    return thirtyCharEmail;
+  }
 
+  public void setThirtyCharEmail(String thirtyCharEmail) {
+    this.thirtyCharEmail = thirtyCharEmail;
+  }
+
+  public String getFifteenChar() {
+    return fifteenChar;
+  }
+  
+  @XmlElement
+  public void setFifteenChar(String fifteenChar) {
+    this.fifteenChar = fifteenChar;
+  }
+
+  public String getFifteenCharMobile() {
+    return fifteenCharMobile;
+  }
+
+  @XmlElement
+  public void setFifteenCharMobile(String fifteenCharMobile) {
+    this.fifteenCharMobile = fifteenCharMobile;
+  }
+
+  public String getThirtyChar() {
+    return thirtyChar;
+  }
+  
+  @XmlElement
+  public void setThirtyChar(String thirtyChar) {
+    this.thirtyChar = thirtyChar;
+  }
+  
+  public String getSixChar() {
+    return sixChar;
+  }
+  
+  @XmlElement
+  public void setSixChar(String sixChar) {
+    this.sixChar = sixChar;
+  }
+
+  public String getSpecialCharacter() {
+    return specialCharacter;
+  }
+  
+  @XmlElement
+  public void setSpecialCharacter(String specialCharacter) {
+    this.specialCharacter = specialCharacter;
+  }
+
+  public String getTwentyChar() {
+    return twentyChar;
+  }
+
+  @XmlElement
+  public void setTwentyChar(String twentyChar) {
+    this.twentyChar = twentyChar;
+  }
+
+  public String getFiftyChar() {
+    return fiftyChar;
+  }
+
+  @XmlElement
+  public void setFiftyChar(String fiftyChar) {
+    this.fiftyChar = fiftyChar;
+  }
+
+  public String getTwentyFiveChar() {
+    return twentyFiveChar;
+  }
+
+  @XmlElement
+  public void setTwentyFiveChar(String twentyFiveChar) {
+    this.twentyFiveChar = twentyFiveChar;
+  }
+ 
   public String getBrowser() {
     return browser;
   }

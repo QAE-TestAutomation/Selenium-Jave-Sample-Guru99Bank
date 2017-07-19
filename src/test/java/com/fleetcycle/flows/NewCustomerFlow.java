@@ -49,14 +49,44 @@ public class NewCustomerFlow {
   public void verifyMandatoryMsgForAddNewCustomerFields() {
     newCustomer.verifyMandatoryMsgForAddNewCustomerFields();
   }
+
+  @Test(priority = 7)
+  public void verifyFirstCharSpaceValidtaionForAddNewCustomerFields() {
+    newCustomer.verifyFirstCharSpaceValidtaionForAddNewCustomerFields();
+  }
   
-  @Test(priority = 6)
+  @Test(priority = 8)
+  public void verifyNumbersNotAllowedValidationForNameCityAndState() {
+    newCustomer.verifyNumbersNotAllowedValidationForNameCityAndState();
+  }
+
+  @Test(priority = 9)
+  public void verifySpecialCharNotAllowedValidationForFields() {
+    newCustomer.verifySpecialCharNotAllowedValidationForFields();
+  }
+
+  @Test(priority = 10)
+  public void verifyCharactersNotAllowedValidtionForPinAndMobileFields() {
+    newCustomer.verifyCharactersNotAllowedValidtionForPinAndMobileFields();
+  }
+  
+  @Test(priority = 11)
+  public void verifyInvalidEmailIdValidation() {
+    newCustomer.verifyInvalidEmailIdValidation();
+  }
+  
+  @Test(priority = 12)
   public void verifyAddingNewCustomer() {
     newCustomer.verifyAddingNewCustomer();
   }
-
-  @Test(priority = 7)
+  
+  @Test(priority = 13)
   public void verifyAddingDuplicateCustomer() {
     newCustomer.verifyAddingDuplicateCustomer();
+  }
+  
+  @Test(priority = 14)
+  public void verifyAddNewCustomerWithMaxFields() {
+    newCustomer.verifyAddNewCustomerWithMaxFields();
   }
 }

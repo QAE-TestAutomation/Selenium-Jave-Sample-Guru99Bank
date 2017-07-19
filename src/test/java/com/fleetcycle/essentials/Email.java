@@ -11,6 +11,11 @@ import javax.mail.internet.MimeMultipart;
 
 public class Email {
   
+  private static String username = "caprusqa@yahoo.com";
+  private static String password = "123456!Q";
+  private static String receiver = "shivaprasad.adirala@caprusit.com";
+  private static String welcomeMessage = "";
+  
   /**
    * Sends Email.
    */
@@ -19,10 +24,7 @@ public class Email {
     ZipCreationforScreenshots obj1 = new ZipCreationforScreenshots();
     obj1.zipResultOutput();
 
-    final String username = "caprusqa@yahoo.com";
-    final String password = "123456!Q";
     // "," is to used to add Multiple user in Receiver Mail id
-    String receiver = "shivaprasad.adirala@caprusit.com";
     // String receiverCC = "rajendiran.pandurangan@caprusit.com";
 
     System.out.println(receiver);

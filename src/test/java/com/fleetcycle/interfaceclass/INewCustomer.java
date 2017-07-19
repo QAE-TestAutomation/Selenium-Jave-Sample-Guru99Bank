@@ -14,4 +14,16 @@ public interface INewCustomer extends IUtil {
   
   public void verifyMandatoryMsgForAddNewCustomerFields();
   
+  public void verifyFirstCharSpaceValidtaionForAddNewCustomerFields();
+  
+  public void verifyNumbersNotAllowedValidationForNameCityAndState();
+  
+  public void verifySpecialCharNotAllowedValidationForFields();
+  
+  public void verifyCharactersNotAllowedValidtionForPinAndMobileFields();
+  
+  public void verifyInvalidEmailIdValidation();
+  
+  public void verifyAddNewCustomerWithMaxFields();
+  
 }

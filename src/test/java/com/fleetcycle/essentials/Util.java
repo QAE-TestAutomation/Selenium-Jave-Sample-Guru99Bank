@@ -39,7 +39,7 @@ import org.testng.annotations.BeforeSuite;
 public class Util extends Report implements IUtil {
 
   public static WebDriver webDriver;
-  public TestData testData;
+  public static TestData testData;
 
   public static String CURRENTDIR = System.getProperty("user.dir") + "\\test-output";
   public static String filename = System.getProperty("user.dir")
@@ -384,13 +384,11 @@ public class Util extends Report implements IUtil {
   }
 
   public TestData mapTestData() {
-    System.out.println("");
     try {
       File file = new File(".//src//resource//testData.xml");
       JAXBContext jaxbContext = JAXBContext.newInstance(TestData.class);
       Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
       testData = (TestData) jaxbUnmarshaller.unmarshal(file);
-      System.out.println(testData.toString());
     } catch (JAXBException e) {
       e.printStackTrace();
     }
