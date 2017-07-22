@@ -48,6 +48,9 @@ public class Util extends Report implements IUtil {
   static DateFormat dateFormat = new SimpleDateFormat("dd_MM_yy_HH_mm");
   static Date date = new Date();
   static String datestring = dateFormat.format(date);
+  
+  // New customer
+  public static String newCustomerId;
 
   // File Locations to capture screenshots and results
   public static String STRDIRECTORY = CURRENTDIR + "\\Automation_Result_" + datestring;

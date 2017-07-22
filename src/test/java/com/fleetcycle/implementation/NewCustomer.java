@@ -115,6 +115,8 @@ public class NewCustomer extends Util implements INewCustomer {
     verifyResult(getElement(newCustomerPage.getPageHeading()).getText()
         .equals("Customer Registered Successfully!!!"),"New customer added.", 
         "Failed to add new customer.");
+    // get added customer id
+    newCustomerId = getElement(newCustomerPage.getNewCustomerId()).getText(); 
     // back to link
     clickOnAddNewCustomerLink();
     endTest(logger);

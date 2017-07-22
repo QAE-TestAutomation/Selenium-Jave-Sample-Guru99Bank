@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 public class NewCustomerPage {
   
   public NewCustomerPage() {
-    
   }
   
   private static NewCustomerPage newCustomerPage;
@@ -45,6 +44,11 @@ public class NewCustomerPage {
   private By reset = By.name("res");
   private By home = By.linkText("Home");
   
+  private By newCustomerId = By.cssSelector("#customer tr:nth-of-type(4) td:nth-of-type(2)");
+
+  public By getNewCustomerId() {
+    return newCustomerId;
+  }
 
   /**
    * pageHeading.
