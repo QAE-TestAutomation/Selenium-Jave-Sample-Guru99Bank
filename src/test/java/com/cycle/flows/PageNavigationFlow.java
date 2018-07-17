@@ -1,9 +1,9 @@
 package com.cycle.flows;
 
-import com.fleetcycle.implementation.Login;
-import com.fleetcycle.implementation.PageNavigation;
-import com.fleetcycle.interfaceclass.ILogin;
-import com.fleetcycle.interfaceclass.IPageNavigation;
+import com.cycle.implementation.Login;
+import com.cycle.implementation.PageNavigation;
+import com.cycle.interfaceclass.ILogin;
+import com.cycle.interfaceclass.IPageNavigation;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

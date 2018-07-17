@@ -1,9 +1,9 @@
 package com.cycle.flows;
 
-import com.fleetcycle.implementation.Login;
-import com.fleetcycle.implementation.NewCustomer;
-import com.fleetcycle.interfaceclass.ILogin;
-import com.fleetcycle.interfaceclass.INewCustomer;
+import com.cycle.implementation.Login;
+import com.cycle.implementation.NewCustomer;
+import com.cycle.interfaceclass.ILogin;
+import com.cycle.interfaceclass.INewCustomer;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

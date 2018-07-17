@@ -3,8 +3,8 @@
 <suite name="Suite">
 	<test name="PageNavigation">
 		<classes>
-		<class name="com.fleetcycle.essentials.Util" />
-		<class name="com.fleetcycle.flows.PageNavigationFlow" />
+		<class name="com.cycle.essentials.Util" />
+		<class name="com.cycle.flows.PageNavigationFlow" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

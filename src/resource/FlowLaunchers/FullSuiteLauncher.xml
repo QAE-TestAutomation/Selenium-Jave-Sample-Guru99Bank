@@ -3,10 +3,10 @@
 <suite name="Full_Suite" verbose="3">
 	<test name="Regression_Test">
 		<classes>
-			<class name="com.fleetcycle.essentials.Util" />
-			<class name="com.fleetcycle.flows.LoginFlow" />
-			<class name="com.fleetcycle.flows.PageNavigationFlow"/>
-			<class name="com.fleetcycle.flows.NewCustomerFlow"/>
+			<class name="com.cycle.essentials.Util" />
+			<class name="com.cycle.flows.LoginFlow" />
+			<class name="com.cycle.flows.PageNavigationFlow"/>
+			<class name="com.cycle.flows.NewCustomerFlow"/>
 		</classes>
 	</test> <!-- Test -->
 

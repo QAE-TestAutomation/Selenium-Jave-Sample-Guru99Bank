@@ -1,9 +1,9 @@
 package com.cycle.implementation;
 
-import com.fleetcycle.essentials.Util;
-import com.fleetcycle.interfaceclass.ILogin;
-import com.fleetcycle.locators.LoginPage;
-import com.fleetcycle.locators.ManagerHomePage;
+import com.cycle.essentials.Util;
+import com.cycle.interfaceclass.ILogin;
+import com.cycle.locators.LoginPage;
+import com.cycle.locators.ManagerHomePage;
 
 public class Login extends Util implements ILogin {
 

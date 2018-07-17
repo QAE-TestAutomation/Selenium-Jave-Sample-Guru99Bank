@@ -1,6 +1,6 @@
 package com.cycle.essentials;
 
-import com.fleetcycle.interfaceclass.IUtil;
+import com.cycle.interfaceclass.IUtil;
 
 import java.awt.Rectangle;
 import java.awt.Robot;

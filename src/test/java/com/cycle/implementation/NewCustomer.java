@@ -1,9 +1,9 @@
 package com.cycle.implementation;
 
-import com.fleetcycle.essentials.Util;
-import com.fleetcycle.interfaceclass.INewCustomer;
-import com.fleetcycle.locators.ManagerHomePage;
-import com.fleetcycle.locators.NewCustomerPage;
+import com.cycle.essentials.Util;
+import com.cycle.interfaceclass.INewCustomer;
+import com.cycle.locators.ManagerHomePage;
+import com.cycle.locators.NewCustomerPage;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;

@@ -1,8 +1,8 @@
 package com.cycle.implementation;
 
-import com.fleetcycle.essentials.Util;
-import com.fleetcycle.interfaceclass.IPageNavigation;
-import com.fleetcycle.locators.ManagerHomePage;
+import com.cycle.essentials.Util;
+import com.cycle.interfaceclass.IPageNavigation;
+import com.cycle.locators.ManagerHomePage;
 
 import java.util.List;
 

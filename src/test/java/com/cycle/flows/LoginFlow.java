@@ -1,7 +1,7 @@
 package com.cycle.flows;
 
-import com.fleetcycle.implementation.Login;
-import com.fleetcycle.interfaceclass.ILogin;
+import com.cycle.implementation.Login;
+import com.cycle.interfaceclass.ILogin;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
