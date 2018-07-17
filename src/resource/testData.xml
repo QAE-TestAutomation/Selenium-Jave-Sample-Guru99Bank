@@ -7,6 +7,18 @@
 	<iUserName>iShiva</iUserName>
 	<iPassword>iPassword</iPassword>
 	
+	<!-- # global test data -->
+	<specialCharacter>~!@#$%^</specialCharacter>
+	<twentyChar>The quick brown foxa</twentyChar>
+	<fiftyChar>The quick brown fox jumps over a lazy dogs DJs fsr</fiftyChar>
+	<twentyFiveChar>The quicks brown fox jump</twentyFiveChar>
+	<sixChar>The qu</sixChar>
+	<fifteenChar>Far far awaya b</fifteenChar>
+	<fifteenCharMobile>91234567891234</fifteenCharMobile>
+	<thirtyChar>Far far awaya behind the words</thirtyChar>
+	<thirtyCharEmail>Farfarawaybwhind12_12@word.com</thirtyCharEmail>
+	
+	
 	<!-- # Customer -->		  
 	<customerName>Shiva</customerName>  
 	<gender>male</gender>
@@ -15,7 +27,7 @@
 	<city>Hyderabad</city>
 	<state>telangana</state>
 	<pin>500018</pin>
-	<mobileNumber>7386734679</mobileNumber>
-	<email>adiralashiva8s@gmail.com</email>
+	<mobileNumber>9123456789</mobileNumber>
+	<email>abce78@gmail.com</email>
 	<ncPassword>123456!</ncPassword> 
 </TestData>
